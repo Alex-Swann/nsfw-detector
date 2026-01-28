@@ -50,6 +50,22 @@ docker run -d -p 3333:3333 -v /path/to/files:/path/to/files --name nsfw-detector
 
 Supported architectures: `x86_64`, `ARM64`.
 
+Example
+```bash
+docker run -d `
+   -p 3333:3333 `
+   -v "C:/Users/<User>/Documents/Github/nsfw-detector/data:/data" `
+   --name nsfw-detector `
+   vxlink/nsfw_detector:latest
+```
+
+To run locally on Powershell:
+```bash
+Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+.\scan_images.ps1 -FolderPath "C:\Users\<User>\Documents\Github\nsfw-detector\data"  -Reset -NsfwThreshold 0.7
+```
+
 ### Use the API for Content Checking
 
 ```bash
